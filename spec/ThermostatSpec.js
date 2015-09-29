@@ -1,5 +1,7 @@
 describe('Thermostat',function() {
 
+var thermostat
+
   beforeEach(function() {
     thermostat = new Thermostat();
   });
@@ -26,13 +28,13 @@ describe('Thermostat',function() {
     expect(thermostat.maxTemp).toEqual(32);
   });
 
-  xit('has a powersave maximum temperature of 25 degrees',function() {
-    thermostat.powersave(true);
-    expect(thermostat.maxTemp).toEqual(25);
-  });
-
   it('powersaving mode is on by default',function() {
     expect(thermostat.powerSave).toEqual(true);
+  });
+
+  it('powersave sets the maximum temperature to 25 degrees',function() {
+    thermostat.powerSaveOn();
+    expect(thermostat.maxTemp).toEqual(25);
   });
 
   xit('',function() {});

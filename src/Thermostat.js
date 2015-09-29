@@ -12,3 +12,7 @@ Thermostat.prototype.upButton = function() {
 Thermostat.prototype.downButton = function() {
   return this.temperature -= 1;
 }
+
+Thermostat.prototype.powerSaveOn = function() {
+  return this.maxTemp = 25;
+}
