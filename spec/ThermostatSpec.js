@@ -13,12 +13,15 @@ describe('Thermostat',function() {
     expect(thermostat.temperature).toEqual(21);
   });
 
-  it('shoulde decrease temperature when down button is pressed',function() {
+  it('should decrease temperature when down button is pressed',function() {
     thermostat.downButton();
     expect(thermostat.temperature).toEqual(19);
   });
 
-  xit('',function() {});
+  it('the minimum temperature is 10 degrees',function() {
+    expect(thermostat.minTemp).toEqual(10);
+  });
+
   xit('',function() {});
   xit('',function() {});
   xit('',function() {});
