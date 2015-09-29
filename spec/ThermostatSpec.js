@@ -24,22 +24,26 @@ var thermostat
     expect(thermostat.minTemp).toEqual(10);
   });
 
-  it('the maximum temperature is 32 degrees',function() {
-    expect(thermostat.maxTemp).toEqual(32);
-  });
-
   it('powersaving mode is on by default',function() {
     expect(thermostat.powerSave).toEqual(true);
   });
 
   it('powersave sets the maximum temperature to 25 degrees',function() {
-    thermostat.powerSaveOn();
+    thermostat.powerSaveSet(true);
     expect(thermostat.maxTemp).toEqual(25);
   });
 
-  xit('',function() {});
-  xit('',function() {});
+  it('powersave off sets the maximum temperature to 32 degrees',function() {
+    thermostat.powerSaveSet(false);
+    expect(thermostat.maxTemp).toEqual(32);
+  });
 
+  it('reset button returns the temperature to 20',function() {
+    thermostat.resetTemperature();
+    expect(thermostat.temperature).toEqual(20);
+  });
+
+  xit('',function() {});
 
 });
 
