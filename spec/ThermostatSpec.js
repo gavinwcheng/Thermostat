@@ -22,7 +22,10 @@ describe('Thermostat',function() {
     expect(thermostat.minTemp).toEqual(10);
   });
 
-  xit('',function() {});
+  it('the maximum temperature is 32 degrees',function() {
+    expect(thermostat.maxTemp).toEqual(32);
+  });
+  
   xit('',function() {});
   xit('',function() {});
   xit('',function() {});
