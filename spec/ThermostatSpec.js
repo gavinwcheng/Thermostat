@@ -8,6 +8,21 @@ describe('Thermostat',function() {
     expect(thermostat.temperature).toBe(20);
   });
 
+  it('should increase temperature when up button is pressed',function() {
+    thermostat.upButton();
+    expect(thermostat.temperature).toEqual(21)
+  });
+
+
+  xit('',function() {});
+  xit('',function() {});
+  xit('',function() {});
+  xit('',function() {});
+  xit('',function() {});
+  xit('',function() {});
+  xit('',function() {});
+
+
 });
 
 // describe("clicking a thing makes it go up by 1", function() {
