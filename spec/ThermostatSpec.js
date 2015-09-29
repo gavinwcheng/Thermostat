@@ -21,21 +21,30 @@ var thermostat
   });
 
   it('the minimum temperature is 10 degrees',function() {
-    expect(thermostat.minTemp).toEqual(10);
+    for (t = 0; t < 10; t++) {
+      thermostat.downButton();
+    }
+    expect(function() {thermostat.downButton(); }).toThrow("Temperature cannot be set below 10 degrees");
   });
 
   it('powersaving mode is on by default',function() {
     expect(thermostat.powerSave).toEqual(true);
   });
 
-  it('powersave sets the maximum temperature to 25 degrees',function() {
+  it('if powersave on the maximum temperature is 25 degrees',function() {
     thermostat.powerSaveSet(true);
-    expect(thermostat.maxTemp).toEqual(25);
+    for (t = 0; t < 5; t++) {
+      thermostat.upButton();
+    }
+    expect(function() {thermostat.upButton(); }).toThrow("Temperature cannot be set above 25 degrees");
   });
 
-  it('powersave off sets the maximum temperature to 32 degrees',function() {
+  it('if powersave off the maximum temperature is 32 degrees',function() {
     thermostat.powerSaveSet(false);
-    expect(thermostat.maxTemp).toEqual(32);
+    for (t = 0; t < 12; t++) {
+      thermostat.upButton();
+    }
+    expect(function() {thermostat.upButton(); }).toThrow("Temperature cannot be set above 32 degrees")
   });
 
   it('reset button returns the temperature to 20',function() {
@@ -43,7 +52,9 @@ var thermostat
     expect(thermostat.temperature).toEqual(20);
   });
 
-  xit('',function() {});
+  it('',function() {
+
+  });
 
 });
 
