@@ -18,7 +18,10 @@
 
 <script> 
 
+
 var thermostat = new Thermostat;
+
+document.getElementById("content").innerHTML = thermostat.temperature ;
 
 Thermostat.prototype.up = function() {
   var temp = document.getElementById("content");
