@@ -11,11 +11,13 @@
 <h1>Thermo-stat</h1>
 
 <div> <p id="thermostat_counter"></p> </div>
+<div> <p id="flash_message"></p> </div>
 
 <button type="button" onclick="thermostat.up();thermostat.changeColor()">Up</button>
 <button type="button" onclick="thermostat.down();thermostat.changeColor()">Down</button>
 <button type="button" onclick="thermostat.reset();thermostat.changeColor()">Reset</button>
-
+<br>
+<input type="checkbox" onchange="thermostat.powerSaveEvent(event)">Powersave</input>
 </body>
 <script src="src/javascripts/Thermostat.js"> </script>
 <script src="src/javascripts/app.js"> </script>
