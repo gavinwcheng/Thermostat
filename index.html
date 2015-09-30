@@ -2,38 +2,27 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="css/style.css">
+<title> Thermostat </title>
 </head>
+
 <body>
 
 <h1>Thermostat</h1>
-
 <p id="demo">A Paragraph.</p>
-
-<script src="lib/jasmine-2.3.4/jquery-2.1.4.min.js"> </script>
-<script src="src/javascripts/Thermostat.js"> </script>
 
 <button type="button" onclick="upButton()">Up</button>
 <button type="button" onclick="downButton()">Down</button>
 
-<script>
-window.onload = function() {
-  alert("welcome");
-};
-</script>
-
-
-
-
-
-
-
-
-
+<script src="lib/jasmine-2.3.4/jquery-2.1.4.min.js"> </script>
+<script src="src/javascripts/Thermostat.js"> </script>
 
 <script>
-function myFunction() {
-    document.getElementById("demo").innerHTML = "Paragraph changed.";
-}
+$( document ).ready(function() {
+  $( "a" ).click(function( event ) {
+    alert( "The link will no longer take you to jquery.com" );
+    event.preventDefault();
+  });
+});
 </script>
 
 </body>
