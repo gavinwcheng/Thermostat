@@ -48,3 +48,5 @@ Thermostat.prototype.colour = function() {
     return "orange";
   }
 };
+
+

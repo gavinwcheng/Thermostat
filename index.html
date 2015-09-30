@@ -17,12 +17,25 @@
 <div> <p id="content"></p> </div>
 
 <script> 
-thermostat = new Thermostat;
-document.getElementById("content").innerHTML = thermostat.temperature ;
+
+var thermostat = new Thermostat;
+
+Thermostat.prototype.up = function() {
+  var temp = document.getElementById("content");
+  thermostat.upButton()
+  temp.innerHTML = thermostat.temperature;  
+}
+
+Thermostat.prototype.down = function() {
+  var temp = document.getElementById("content");
+  thermostat.downButton()
+  temp.innerHTML = thermostat.temperature;  
+}
+
 </script>
 
-<button type="button" onclick="javascript:thermostat.upButton()">Up</button>
-<button type="button" onclick="javascript:thermostat.downButton()">Down</button>
+<button type="button" onclick="javascript:thermostat.up()">Up</button>
+<button type="button" onclick="javascript:thermostat.down()">Down</button>
 
 </body>
 
