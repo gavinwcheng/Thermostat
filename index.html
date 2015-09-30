@@ -16,9 +16,12 @@
 
 <div> <p id="content"></p> </div>
 
+<button type="button" onclick="thermostat.up();thermostat.changeColor()">Up</button>
+<button type="button" onclick="thermostat.down()">Down</button>
+<button type="button" onclick="thermostat.reset()">Reset</button>
+
+</body>
 <script> 
-
-
 var thermostat = new Thermostat;
 
 document.getElementById("content").innerHTML = thermostat.temperature ;
@@ -41,12 +44,9 @@ Thermostat.prototype.reset = function() {
   temp.innerHTML = thermostat.temperature;  
 }
 
+function changeColor() {
+  var elem = document.getElementById("content");
+  elem.style.color = thermostat.colour;
+}
 </script>
-
-<button type="button" onclick="thermostat.up()">Up</button>
-<button type="button" onclick="thermostat.down()">Down</button>
-<button type="button" onclick="thermostat.reset()">Reset</button>
-
-</body>
-
 </html>
