@@ -14,11 +14,15 @@
 
 <h1>Thermo-stat</h1>
 
-<p id="demo">A Paragraph.</p>
+<div> <p id="content"></p> </div>
+
+<script> 
+thermostat = new Thermostat;
+document.getElementById("content").innerHTML = thermostat.temperature ;
+</script>
 
 <button type="button" onclick="javascript:thermostat.upButton()">Up</button>
 <button type="button" onclick="javascript:thermostat.downButton()">Down</button>
-
 
 </body>
 

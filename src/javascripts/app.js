@@ -1,1 +1,1 @@
-thermostat = new Thermostat();
+
