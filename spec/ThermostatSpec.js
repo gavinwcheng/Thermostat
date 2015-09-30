@@ -56,7 +56,7 @@ var thermostat
     for (t = 0; t < 2; t++) {
       thermostat.downButton();
     }
-    expect(thermostat.colour).toEqual("green")
+    expect(thermostat.colour()).toEqual("green")
   });
 
   xit('',function() {});
