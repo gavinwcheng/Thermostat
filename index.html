@@ -35,10 +35,17 @@ Thermostat.prototype.down = function() {
   temp.innerHTML = thermostat.temperature;  
 }
 
+Thermostat.prototype.reset = function() {
+  var temp = document.getElementById("content");
+  thermostat.resetTemperature()
+  temp.innerHTML = thermostat.temperature;  
+}
+
 </script>
 
-<button type="button" onclick="javascript:thermostat.up()">Up</button>
-<button type="button" onclick="javascript:thermostat.down()">Down</button>
+<button type="button" onclick="thermostat.up()">Up</button>
+<button type="button" onclick="thermostat.down()">Down</button>
+<button type="button" onclick="thermostat.reset()">Reset</button>
 
 </body>
 
