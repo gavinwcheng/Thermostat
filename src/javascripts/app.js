@@ -30,5 +30,4 @@ $(document).ready(function() {
   $("#Powersave").click(function(){
     updateThermostat(thermostat.switchPowerSaving());
   });
-
 });
