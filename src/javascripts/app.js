@@ -5,29 +5,29 @@ var updateThermostat = function(method) {
   updateHTML();
 };
 
-document.getElementById("thermostat_counter").style.color = thermostat.colour();
+$("#thermostat_counter").css("color", thermostat.colour());
 // document.getElementById("Powersave").checked = true;
 
 var updateHTML = function() {
-  document.getElementById("thermostat_counter").innerHTML = thermostat.temperature;
-  document.getElementById("thermostat_counter").style.color = thermostat.colour();
+  $("#thermostat_counter").html(thermostat.temperature);
+  $("#thermostat_counter").css("color", thermostat.colour());
 };
 
-document.addEventListener('DOMContentLoaded', function(){
+$(document).ready(function() {
 
   $("#Up").click(function() {
     updateThermostat(thermostat.upButton());
   });
 
-  document.getElementById("Down").addEventListener("click",function() {
+  $("#Down").click(function() {
     updateThermostat(thermostat.downButton());
   });
 
-  document.getElementById("Reset").addEventListener("click",function() {
+  $("#Reset").click(function() {
     updateThermostat(thermostat.resetTemperature());
   });
 
-  document.getElementById("Powersave").addEventListener("click",function(){
+  $("#Powersave").click(function(){
     updateThermostat(thermostat.switchPowerSaving());
   });
 
