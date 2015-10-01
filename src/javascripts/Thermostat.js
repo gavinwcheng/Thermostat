@@ -6,10 +6,10 @@ function Thermostat(){
 };
 
 Thermostat.prototype.upButton = function() {
-  if (this.powerSave === true && this.temperature >= 25) {
+  if (this.maxTemp === 25 && this.temperature >= 25) {
     throw "Temperature cannot be set above 25 degrees";
 };
-  if (this.powerSave === false && this.temperature >= 32) {
+  if (this.maxTemp === 32 && this.temperature >= 32) {
     throw "Temperature cannot be set above 32 degrees";
 };
   return this.temperature += 1;
@@ -22,15 +22,9 @@ Thermostat.prototype.downButton = function() {
   return this.temperature -= 1;
 };
 
-Thermostat.prototype.powerSaveSet = function(value) {
-  if (value === true) {
-    this.powerSave = true;
-    return this.maxTemp = 25;
-  };
-  if (value === false) {
-    this.powerSave = false;
-    return this.maxTemp = 32;
-  };
+Thermostat.prototype.switchPowerSaving = function() {
+  this.powerSave = !this.powerSave;
+  this.maxTemp = this.powerSave ? 25 : 32
 };
 
 Thermostat.prototype.resetTemperature = function() {
@@ -48,5 +42,4 @@ Thermostat.prototype.colour = function() {
     return "orange";
   }
 };
-
 

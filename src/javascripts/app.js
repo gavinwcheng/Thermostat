@@ -1,28 +1,34 @@
 var thermostat = new Thermostat;
 
-document.getElementById("thermostat_counter").innerHTML = thermostat.temperature ;
-var elem = document.getElementById("thermostat_counter");
-elem.style.color = thermostat.colour();
+var updateThermostat = function(method) {
+  method;
+  updateHTML();
+};
 
-Thermostat.prototype.up = function() {
-  var temp = document.getElementById("thermostat_counter");
-  thermostat.upButton()
-  temp.innerHTML = thermostat.temperature;  
-}
+document.getElementById("thermostat_counter").style.color = thermostat.colour();
+// document.getElementById("Powersave").checked = true;
 
-Thermostat.prototype.down = function() {
-  var temp = document.getElementById("thermostat_counter");
-  thermostat.downButton()
-  temp.innerHTML = thermostat.temperature;  
-}
+var updateHTML = function() {
+  document.getElementById("thermostat_counter").innerHTML = thermostat.temperature;
+  document.getElementById("thermostat_counter").style.color = thermostat.colour();
+};
 
-Thermostat.prototype.reset = function() {
-  var temp = document.getElementById("thermostat_counter");
-  thermostat.resetTemperature()
-  temp.innerHTML = thermostat.temperature;  
-}
+document.addEventListener('DOMContentLoaded', function(){
 
-Thermostat.prototype.changeColor = function() {
-  var elem = document.getElementById("thermostat_counter");
-  elem.style.color = thermostat.colour();
-}
+  document.getElementById("Up").addEventListener("click", function() {
+    updateThermostat(thermostat.upButton());
+  });
+
+  document.getElementById("Down").addEventListener("click",function() {
+    updateThermostat(thermostat.downButton());
+  });
+
+  document.getElementById("Reset").addEventListener("click",function() {
+    updateThermostat(thermostat.resetTemperature());
+  });
+
+  document.getElementById("Powersave").addEventListener("click",function(){
+    thermostat.switchPowerSaving();
+  });
+
+});
