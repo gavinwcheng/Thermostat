@@ -15,7 +15,7 @@ var updateHTML = function() {
 
 document.addEventListener('DOMContentLoaded', function(){
 
-  document.getElementById("Up").addEventListener("click", function() {
+  $("#Up").click(function() {
     updateThermostat(thermostat.upButton());
   });
 
