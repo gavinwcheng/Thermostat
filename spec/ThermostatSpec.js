@@ -32,7 +32,6 @@ var thermostat
   });
 
   it('if powersave on the maximum temperature is 25 degrees',function() {
-    thermostat.switchPowerSaving;
     for (t = 0; t < 5; t++) {
       thermostat.upButton();
     }
@@ -56,10 +55,19 @@ var thermostat
     for (t = 0; t < 2; t++) {
       thermostat.downButton();
     }
-    expect(thermostat.colour()).toEqual("green")
+    expect(thermostat.colour()).toEqual("green");
   });
 
-  xit('',function() {});
+  it('reverts to 25 when powersave is switched on',function() {
+    thermostat.switchPowerSaving();
+    for (t = 0; t < 10; t++) {
+      thermostat.upButton();
+    }
+    thermostat.switchPowerSaving();
+    expect(thermostat.temperature).toEqual(25);
+  });
+
+
   xit('',function() {});
   xit('',function() {});
 

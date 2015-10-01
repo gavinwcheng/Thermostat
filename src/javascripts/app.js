@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 
   document.getElementById("Powersave").addEventListener("click",function(){
-    thermostat.switchPowerSaving();
+    updateThermostat(thermostat.switchPowerSaving());
   });
 
 });
