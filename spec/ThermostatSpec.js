@@ -32,7 +32,7 @@ var thermostat
   });
 
   it('if powersave on the maximum temperature is 25 degrees',function() {
-    thermostat.powerSaveSet(true);
+    thermostat.switchPowerSaving;
     for (t = 0; t < 5; t++) {
       thermostat.upButton();
     }
@@ -40,7 +40,7 @@ var thermostat
   });
 
   it('if powersave off the maximum temperature is 32 degrees',function() {
-    thermostat.powerSaveSet(false);
+    thermostat.switchPowerSaving();
     for (t = 0; t < 12; t++) {
       thermostat.upButton();
     }
