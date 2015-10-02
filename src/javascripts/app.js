@@ -30,4 +30,13 @@ $(document).ready(function() {
   $("#Powersave").click(function(){
     updateThermostat(thermostat.switchPowerSaving());
   });
+
+  var urlCity = window.location.search.replace('?city=', '') || 'london';
+
+  $.ajax('http://api.openweathermap.org/data/2.5/weather?q=' + urlCity, {
+    success: function(data) {
+      console.log(data.main.temp);
+      $("#Weather").html(data.main.temp);
+    }
+  });
 });

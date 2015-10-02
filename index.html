@@ -2,30 +2,40 @@
 <html>
 
 <head>
-<link rel="stylesheet" type="text/css" href="src/css/style.css">
-<title> Thermostat </title>
+  <link rel="stylesheet" type="text/css" href="src/css/style.css">
+  <title> Thermostat </title>
 </head>
 
 <body>
 
-<h1>Thermo-stat</h1>
+  <h1>Thermo-stat</h1>
 
-<div> <p id="thermostat_counter">20</p> </div>
-<!-- <div> <p id="flash_message"></p> </div> -->
-<div class="button_container">
-<button type="button" id="Up">Up</button>
-<button type="button" id="Down">Down</button>
-<button type="button" id="Reset">Reset</button>
-</div>
-<br>
+  <div> <p id="thermostat_counter">20</p> </div>
+  <!-- <div> <p id="flash_message"></p> </div> -->
+  <div class="button_container">
+    <button type="button" id="Up">Up</button>
+    <button type="button" id="Down">Down</button>
+    <button type="button" id="Reset">Reset</button>
+  </div>
+  <br>
 
-<div class="do">
-<input class="do" type="checkbox" id="Powersave" checked>Powersave</input>
-</div>
+  <div class="do">
+    <input class="do" type="checkbox" id="Powersave" checked>Powersave</input>
+  </div>
+
+  <form id="City">
+    City: <select name="city">
+      <option value="london">London</option>
+      <option value="madrid">Madrid</option>
+      <option value="paris">Paris</option>
+    </select>
+    <input type='submit' value='Check weather'>
+  </form>
+
+  <div id="Weather">Weather: </div>
 
 </body>
-<script src="lib/jasmine-2.3.4/jquery-2.1.4.min.js"> </script>
-<script src="src/javascripts/Thermostat.js"> </script>
-<script src="src/javascripts/app.js"> </script>
+  <script src="lib/jasmine-2.3.4/jquery-2.1.4.min.js"> </script>
+  <script src="src/javascripts/Thermostat.js"> </script>
+  <script src="src/javascripts/app.js"> </script>
 </html>
-
